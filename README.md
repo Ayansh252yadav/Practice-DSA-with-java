@@ -47,7 +47,7 @@ The goal of this project is to strengthen my problem-solving skills and build a 
 
 ## 🛠️ Tech Stack  
 - **Language:** Java (JDK 8+)  
-- **IDE:** IntelliJ IDEA / Eclipse / VS Code  
+- **IDE:** IntelliJ IDEA /  VS Code  
 - **Version Control:** Git & GitHub  
 
 ---
