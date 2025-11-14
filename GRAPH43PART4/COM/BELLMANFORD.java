@@ -26,12 +26,15 @@ public class BELLMANFORD {
     }
 
     public static void creategraph2(ArrayList<Edge> graph){
-        graph.add(new Edge(0,1,2));
-        graph.add(new Edge(0,2,4));
-        graph.add(new Edge(1,2,-4));
-        graph.add(new Edge(2,3,2));
-        graph.add(new Edge(3,4,4));
-        graph.add(new Edge(4,1,-1));
+//        graph.add(new Edge(0,1,2));
+//        graph.add(new Edge(0,2,4));
+//        graph.add(new Edge(1,2,-4));
+//        graph.add(new Edge(2,3,2));
+//        graph.add(new Edge(3,4,4));
+//        graph.add(new Edge(4,1,-1));
+        graph.add(new Edge(1,2,1));
+        graph.add(new Edge(2,1,-2));
+        graph.add(new Edge(2,3,1));
     }
     public static void bellmanFord2(ArrayList<Edge> graph,int src,int V){
         int dist[]=new int[V];
