@@ -17,26 +17,52 @@ public class BELLMANFORD {
      for(int i=0;i<graph.length;i++){
          graph[i]=new ArrayList<>();
      }
-     graph[0].add(new Edge(0,1,2));
-     graph[0].add(new Edge(0,2,4));
-     graph[1].add(new Edge(1,2,-4));
-     graph[2].add(new Edge(2,3,2));
-     graph[3].add(new Edge(3,4,4));
-     graph[4].add(new Edge(4,1,-1));
+//     graph[0].add(new Edge(0,1,2));
+//     graph[0].add(new Edge(0,2,4));
+//     graph[1].add(new Edge(1,2,-4));
+//     graph[2].add(new Edge(2,3,2));
+//     graph[3].add(new Edge(3,4,4));
+//     graph[4].add(new Edge(4,1,-1));
+        //graph 4
+
+
     }
 
     public static void creategraph2(ArrayList<Edge> graph){
+//        it other graph1
 //        graph.add(new Edge(0,1,2));
 //        graph.add(new Edge(0,2,4));
 //        graph.add(new Edge(1,2,-4));
 //        graph.add(new Edge(2,3,2));
 //        graph.add(new Edge(3,4,4));
 //        graph.add(new Edge(4,1,-1));
-        graph.add(new Edge(1,2,1));
-        graph.add(new Edge(2,1,-2));
-        graph.add(new Edge(2,3,1));
+//        graph2
+//        graph.add(new Edge(1,2,1));
+//        graph.add(new Edge(2,1,-2));
+//        graph.add(new Edge(2,3,1));
+        //graph3
+//        graph.add(new Edge(1,2,4));
+//        graph.add(new Edge(1,3,5));
+//        graph.add(new Edge(2,4,6));
+//        graph.add(new Edge( 3,2,-4));
+//        graph.add(new Edge(4,5,2));
+//        graph.add(new Edge(4,3,3));
+//        graph.add(new Edge(4,6,9));
+//        graph.add(new Edge(5,7,1));
+//        graph.add(new Edge(6,3,7));
+
+        graph.add(new Edge(1,2,2));
+        graph.add(new Edge(1,3,3));
+        graph.add(new Edge(2,4,4));
+        graph.add(new Edge(3,2,-2));
+        graph.add(new Edge(4,3,5));
+        graph.add(new Edge(4,5,1));
+        graph.add(new Edge(4,6,2));
+        graph.add(new Edge(5,7,2));
+        graph.add(new Edge(6,7,1));
     }
-    public static void bellmanFord2(ArrayList<Edge> graph,int src,int V){
+
+    public static void bellmanFord2(ArrayList<Edge> graph, int src, int V) {
         int dist[]=new int[V];
         for(int i=0;i< dist.length;i++){
             if(i !=src){
@@ -60,7 +86,7 @@ public class BELLMANFORD {
                     }
             }
         }
-        for(int i=0;i< dist.length;i++){
+        for(int i=1;i< dist.length;i++){
             System.out.print(dist[i]+" ");
         }
         System.out.println();
@@ -96,12 +122,12 @@ public class BELLMANFORD {
     }
 
     public static void main(String[] args) {
-        int V=5;
-        ArrayList<Edge>graph[]=new ArrayList[V];
+        int V=8;
+//        ArrayList<Edge>graph[]=new ArrayList[V];
         ArrayList<Edge> edges=new ArrayList<>();//this is another way of creating graph
-        creategraph(graph);
+//        creategraph(graph);
         creategraph2(edges);
-        bellmanFord2(edges,0,V);
-        bellmanFord(graph,0);
+        bellmanFord2(edges,1,V);
+//        bellmanFord(graph,0);
     }
 }
