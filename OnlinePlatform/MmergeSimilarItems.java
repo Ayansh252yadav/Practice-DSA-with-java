@@ -6,17 +6,7 @@ public class MmergeSimilarItems {
     public static List<List<Integer>> merge(int [][]item1, int [][] item2) {
         int n = item1.length;
         int m = item2.length;
-
-        HashSet<Integer>set =new HashSet<>();
-
-        for(int i=0;i<n;i++){
-            set.add(item1[i][0]);
-        }
-        for(int i=0;i<m;i++){
-            set.add(item2[i][0]);
-        }
-        System.out.println(set);
-        int p = set.size();
+        int p=Math.max(n,m);
         int temp[][] = new int[p][2];
         int i,j;
         int k=0;
@@ -29,7 +19,6 @@ public class MmergeSimilarItems {
                 }
             }
             }
-         ArrayList<Integer> list = new ArrayList<>(set);
         for (i = 0; i < m; i++) {
             int key = item2[i][0];
             boolean exists = false;
@@ -47,9 +36,6 @@ public class MmergeSimilarItems {
                 k++;
             }
         }
-
-
-
 
         for ( i = 0; i < temp.length; i++) {
                 for ( j = 0; j < temp[0].length; j++) {
