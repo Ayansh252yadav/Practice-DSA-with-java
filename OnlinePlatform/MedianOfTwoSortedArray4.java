@@ -1,6 +1,4 @@
 package OnlinePlatform;
-
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MedianOfTwoSortedArray4 {
