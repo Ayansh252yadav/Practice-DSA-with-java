@@ -73,38 +73,18 @@ public class MergeKSortedList {
         System.out.print("null");
     }
 
-    public static void main(String[] args) {
-        int arr[]={1,2,3,4};
-        for(int i=0;i<arr.length;i++){
-            addFirst(arr[i]);
-        }
-        addAtPosition(5,1);
-        printList(head);
-    }
-}
-class MergesortefList {
-    public class ListNode {
-      int val;
-      ListNode next;
-     ListNode(int val) {
-         this.val = val;
-         this.next = next;
-     }
-  }
-    public ListNode mergeKLists(ListNode[] lists) {
-        PriorityQueue<ListNode> pq = new PriorityQueue<>(
-                (a, b) -> a.val - b.val
-        );
-        for (ListNode node : lists) {
+    public Node mergeKLists(Node[] lists) {
+        PriorityQueue<Node> pq = new PriorityQueue<>((a, b) -> a.data - b.data);
+        for (Node node : lists) {
             if (node != null) {
                 pq.add(node);
             }
         }
-        ListNode dummy = new ListNode(-1);
-        ListNode tail = dummy;
+        Node dummy = new Node(-1);
+        Node tail = dummy;
 
         while (!pq.isEmpty()) {
-            ListNode minNode = pq.poll();
+            Node minNode = pq.poll();
             tail.next = minNode;
             tail = tail.next;
 
@@ -114,5 +94,15 @@ class MergesortefList {
         }
         return dummy.next;
     }
+
+    public static void main(String[] args) {
+        int arr[]={1,2,3,4};
+        for(int i=0;i<arr.length;i++){
+            addFirst(arr[i]);
+        }
+        addAtPosition(5,1);
+        printList(head);
+    }
 }
+
 
