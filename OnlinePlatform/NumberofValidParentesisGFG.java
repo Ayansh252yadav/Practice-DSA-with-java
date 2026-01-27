@@ -11,6 +11,7 @@ public class NumberofValidParentesisGFG {
         }
         return fact;
     }
+    //using catalan
     public static int findWays(int n){
         if(n%2==1){
             return 0;
