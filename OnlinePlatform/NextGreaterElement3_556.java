@@ -34,7 +34,7 @@ public class NextGreaterElement3_556 {
             arr.add(rem);
             n /= 10;
         }
-       ArrayList<ArrayList<Integer>>arr1=new ArrayList<>();
+       ArrayList<ArrayList<Integer>>arr1;
         arr1= backtrack(arr,0,new ArrayList<>());
         Collections.sort(arr1, (a, b) -> a.get(0) - b.get(0));
         System.out.println(arr1);
