@@ -24,6 +24,7 @@ public class PallindromeLinkedListSlowFastApproch extends CreateLinkedList {
         while(curr!=null){
             next=curr.next;
             curr.next=prev;
+
             prev=curr;
             curr=next;
         }
@@ -48,13 +49,13 @@ public class PallindromeLinkedListSlowFastApproch extends CreateLinkedList {
     }
 
     public static void main(String[] args) {
-        int arr[]={1,2,3,2,1};
+        int arr[]={1,2,2,1,};
         for(int i=0;i<arr.length;i++){
             addFirst(arr[i]);
         }
-//        System.out.println(isPalilindrome(head));
-        practice pc=new practice();
-        System.out.println(pc.isPallindrome(head));
+        System.out.println(isPalilindrome(head));
+//        practice pc=new practice();
+//        System.out.println(pc.isPallindrome(head));
     }
 }
 class practice extends CreateLinkedList{
