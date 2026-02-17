@@ -28,6 +28,7 @@ StringBuilder result =new StringBuilder("");
           n = n >>1;
       }
 
+
       System.out.println(result.reverse());
   }
     public static void main(String[] args) {
