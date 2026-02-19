@@ -89,6 +89,24 @@ public class TreeTraversal {
             int rh=height(root.right);
             return Math.max(lh,rh)+1;
     }
+    //count nodes in tree
+    public static int countNodes(Node root){
+           if (root==null){
+               return 0;
+           }
+           int leftCount=countNodes(root.left);
+           int rightCount=countNodes(root.right);
+           return rightCount+leftCount+1;
+    }
+
+    public static int sumOfNodes(Node root){
+            if(root==null){
+                return 0;
+            }
+            int leftSum=sumOfNodes(root.left);
+            int rightSum=sumOfNodes(root.right);
+            return leftSum+rightSum+ root.data;
+    }
     public static void main(String[] args) {
      int node[]={1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
      Node root=buildTree(node);
@@ -100,6 +118,8 @@ public class TreeTraversal {
       4  5 6  7
          */
 //     postOrder(root);
-        levelOrder(root);
+//        levelOrder(root);
+//        System.out.println( countNodes(root));
+        System.out.println(sumOfNodes(root));
     }
 }
