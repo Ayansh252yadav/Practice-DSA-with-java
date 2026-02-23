@@ -24,5 +24,8 @@ public class BinaryGap868 {
 
     public static void main(String[] args) {
         System.out.println(binaryGap(5));
+        Random rd=new Random();
+        int num=rd.nextInt(100);
+        System.out.println(num);
     }
 }
