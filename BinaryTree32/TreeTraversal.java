@@ -108,8 +108,8 @@ public class TreeTraversal {
             return leftSum+rightSum+ root.data;
     }
     public static void main(String[] args) {
-     int node[]={1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
-     Node root=buildTree(node);
+//     int node[]={1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
+//     Node root=buildTree(node);
   /*
          1
         /  \
@@ -120,6 +120,6 @@ public class TreeTraversal {
 //     postOrder(root);
 //        levelOrder(root);
 //        System.out.println( countNodes(root));
-        System.out.println(sumOfNodes(root));
+//        System.out.println(sumOfNodes(root));
     }
 }

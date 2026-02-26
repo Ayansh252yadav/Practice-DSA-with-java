@@ -43,6 +43,23 @@ public class DiameterOfBinaryTree {
         int selfDiameter=lh+rh+1;
         return Math.max(Math.max(leftDiameter,rightDiameter),selfDiameter);
     }
+    public static void preOrder(Node root){
+        if(root==null){
+            return;
+        }
+        System.out.print(root.data+" ");
+        preOrder(root.left);
+        preOrder(root.right);
+    }
+    public static void postOrder(Node root){
+        if(root==null){
+            return;
+        }
+        postOrder(root.left);
+        postOrder(root.right);
+        System.out.print(root.data+" ");
+    }
+
 // optimize approach
     static class Info{
         int diam;
