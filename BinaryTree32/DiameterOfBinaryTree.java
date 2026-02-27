@@ -2,17 +2,17 @@ package BinaryTree32;
 
 public class DiameterOfBinaryTree {
     //
-    static class Node{
-        int data;
-        Node left;
-        Node right;
-        Node(int data){
+    public static class Node{
+      public   int data;
+       public Node left;
+       public Node right;
+       public Node(int data){
             this.data=data;
             this.left=null;
             this.right=null;
         }
     }
-    static int idx=-1;
+    public static int idx=-1;
     public static Node buildTree(int node[]){
         idx++;
         if(node[idx]==-1){
