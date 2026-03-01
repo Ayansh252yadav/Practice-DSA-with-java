@@ -15,7 +15,7 @@ public class ConcatinationofConsecutiveBinary {
     public static int concatenatedBinary1(int n){
         long result = 0;
         int MOD = 1000000007;
-        int len = 0; 
+        int len = 0;
         for(int i = 1; i <= n; i++) {
             len=Integer.toBinaryString(i).length();
             result = ((result << len) + i) % MOD;
