@@ -1,6 +1,4 @@
-package OnlinePlatform;
-
-import BinaryTree32.DiameterOfBinaryTree;
+package BinaryTree32;
 
 import java.util.ArrayList;
 import java.util.HashMap;
