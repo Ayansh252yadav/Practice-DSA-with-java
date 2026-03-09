@@ -1,0 +1,23 @@
+package BinaryTree32;
+
+public class TransfromToSumTree extends TreeTraversal {
+    public static int transform(Node root){
+        if(root==null){
+            return 0;
+        }
+        int leftChild=transform(root.left);
+        int rightChild=transform(root.right);
+        int data= root.data;
+        int newLeft=root.left==null?0:root.left.data;
+        int newRight=root.right==null?0:root.right.data;
+        root.data= leftChild+newLeft+rightChild+newRight;
+        return data;
+    }
+    public static void main(String[] args) {
+        int []arr={1,2,4,-1,-1,5,-1,-1,3,-1,-1};
+        idx=-1;
+        Node root=buildTree(arr);
+        transform(root);
+        preOrder(root);
+    }
+}

@@ -22,6 +22,7 @@ public class MinimumDistanceBetweenNodesOfBT extends TreeTraversal{
     }
     public static int minDist(Node root,int n1,int n2){
         int leftDis=lcaDist(root,n1);
+        System.out.println(leftDis);
         int rightDis=lcaDist(root,n2);
         return leftDis+rightDis;
     }
