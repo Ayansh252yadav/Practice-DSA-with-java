@@ -1,5 +1,7 @@
 package LinkedList26;
 
+import static java.lang.Integer.valueOf;
+
 public class OddEvenLinkedList extends CreateLinkedList {
     public static Node Insert(Node list, int data) {
         Node newNode = new Node(data);
@@ -68,6 +70,13 @@ public class OddEvenLinkedList extends CreateLinkedList {
        return list;
    }
     public static void main(String[] args) {
-
+int a=100;int b=100;
+        System.out.println(a==b);
+        a=200;
+        b=200;
+        System.out.println(a==b);
+        Integer f =valueOf(500);
+        Integer g=valueOf(500);
+        System.out.println(f==g);
     }
 }
