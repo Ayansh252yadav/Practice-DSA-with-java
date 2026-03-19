@@ -29,13 +29,14 @@ public class LinkedListIterartiveSearch extends CreateLinkedList{
        return true;
    }
     public static void main(String[] args) {
+        CreateLinkedList ls=new CreateLinkedList();
         int arr[] = {1, 2, 3, 4, 5};
         for(int i=arr.length-1;i>=0;i--){
-            addFirst(arr[i]);
+            ls.addFirst(arr[i]);
         }
-        printList(head);
+        ls.printList(ls.head);
         System.out.println();
-        System.out.println(iterativeSearch(head,6));
-        System.out.println(recursiveSearch(head,head,1));
+        System.out.println(iterativeSearch(ls.head,6));
+        System.out.println(recursiveSearch(ls.head,ls.head,1));
     }
 }

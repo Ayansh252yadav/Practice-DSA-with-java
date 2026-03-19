@@ -49,11 +49,12 @@ public class PallindromeLinkedListSlowFastApproch extends CreateLinkedList {
     }
 
     public static void main(String[] args) {
+        CreateLinkedList ls=new CreateLinkedList();
         int arr[]={1,2,2,1,};
         for(int i=0;i<arr.length;i++){
-            addFirst(arr[i]);
+            ls.addFirst(arr[i]);
         }
-        System.out.println(isPalilindrome(head));
+        System.out.println(isPalilindrome(ls.head));
 //        practice pc=new practice();
 //        System.out.println(pc.isPallindrome(head));
     }

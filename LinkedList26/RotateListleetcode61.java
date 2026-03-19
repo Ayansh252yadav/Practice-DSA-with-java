@@ -3,7 +3,7 @@ package LinkedList26;
 import java.util.Stack;
 
 public class RotateListleetcode61 extends CreateLinkedList{
-    public static Node deleteEnd(){
+    public  Node deleteEnd(){
         if(head==null){
             return head;
         }
@@ -19,7 +19,7 @@ public class RotateListleetcode61 extends CreateLinkedList{
 //        System.out.println(head.data);
         return del;
     }
-    public static void addFirst(int data){
+    public  void addFirst(int data){
         Node newNode=new Node(data);
      if(head==null){
          head=tail=newNode;
@@ -31,26 +31,27 @@ public class RotateListleetcode61 extends CreateLinkedList{
 
     public static void main(String[] args) {
         RotateListleetcode61 sc=new RotateListleetcode61();
+        CreateLinkedList ls=new CreateLinkedList();
         int arr[]={10 ,20, 30, 40};
         for(int i=0;i<arr.length;i++){
-            addLast(arr[i]);
+            sc.addLast(arr[i]);
         }
 //       Node del= deleteEnd(head);
 //        addFirst(del.data);
 //        System.out.println(del.data);
 //        printList(head);
         int k=6;
-        Node temp=head;
+        Node temp=ls.head;
         int size=0;
         while (temp!=null){
             temp=temp.next;
             size++;
         }
         for(int i=0;i<k%size;i++){
-            Node del1=deleteEnd();
-            addFirst(del1.data);
+            Node del1=sc.deleteEnd();
+            sc.addFirst(del1.data);
         }
-        printList(head);
+        ls.printList(ls.head);
     }
 }
 

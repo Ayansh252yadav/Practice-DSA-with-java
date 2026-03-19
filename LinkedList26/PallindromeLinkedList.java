@@ -21,10 +21,11 @@ public class PallindromeLinkedList extends CreateLinkedList{
     }
 
     public static void main(String[] args) {
+        CreateLinkedList ls=new CreateLinkedList();
         int arr[]={1,2,3,2,1};
         for(int i=0;i<arr.length;i++){
-            addFirst(arr[i]);
+            ls.addFirst(arr[i]);
         }
-        System.out.println(isPallindrome(head));
+        System.out.println(isPallindrome(ls.head));
     }
 }

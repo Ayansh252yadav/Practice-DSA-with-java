@@ -1,19 +1,19 @@
 package LinkedList26;
 //import java.util.LinkedList;
 public class CreateLinkedList {
-    static class Node{
-        int data;
-        Node next;
-        Node(int data){
+   public static class Node{
+       public int data;
+      public   Node next;
+       public Node(int data){
             this.data=data;
             this.next=null;
         }
     }
-    public static Node head;
-    public static Node tail;
+    public  Node head;
+    public Node tail;
     static int size;
    //print linked list
-    public static void printList(Node head){
+    public  void printList(Node head){
         Node temp=head;
         if(head==null){
             System.out.println("Linked list is empty first please add some element");
@@ -26,7 +26,7 @@ public class CreateLinkedList {
         System.out.print("null");
     }
   ///add first in liked list
-  public static void addFirst(int data){
+  public  void addFirst(int data){
       Node newNode=new Node(data);
       size++;
       if(head==null){
@@ -37,7 +37,7 @@ public class CreateLinkedList {
       head=newNode;
   }
   //add element at the last of the linked list
-    public static void addLast(int data){
+    public  void addLast(int data){
       Node newNode=new Node(data);
       size++;
       if(head==null){
@@ -48,7 +48,7 @@ public class CreateLinkedList {
       tail=newNode;
     }
     //add  int the middle of the Linked List
-    public static void addMiddle(int data){
+    public  void addMiddle(int data){
       Node temp=head;
       int i=1;
       while(i<size/2){
@@ -61,7 +61,7 @@ public class CreateLinkedList {
       temp.next=newNode;
     }
     //remove first element in LinkedList
-    public static void removeFirst(){
+    public  void removeFirst(){
       if(head==null){
           System.out.println("your List is empty");
           return;
@@ -70,7 +70,7 @@ public class CreateLinkedList {
       size--;
     }
     //remove last element from the List
-    public static void removeLast(){
+    public  void removeLast(){
       Node temp=head;
       int i=0;
     if(size==0){
@@ -89,7 +89,7 @@ public class CreateLinkedList {
       size--;
     }
     //remove specified indexof list element
-    public static void removeIndexOf(int index){
+    public  void removeIndexOf(int index){
       if(head==null){
           System.out.println("List is Empty");
           return;
@@ -115,20 +115,21 @@ public class CreateLinkedList {
 //        System.out.println(size);
     }
     public static void main(String[] args) {
-        addLast(5);
-        addFirst(4);
+      CreateLinkedList ls=new CreateLinkedList();
+        ls.addLast(5);
+        ls.addFirst(4);
 //        addFirst(3);
-        addFirst(2);
-        addFirst(1);
-        addMiddle(3);
-        addMiddle(6);
-        addMiddle(7);
-        removeFirst();
-        removeLast();
-        removeIndexOf(5);
+        ls.addFirst(2);
+        ls.addFirst(1);
+        ls.addMiddle(3);
+        ls.addMiddle(6);
+        ls.addMiddle(7);
+        ls.removeFirst();
+        ls.removeLast();
+        ls.removeIndexOf(5);
         System.out.println(size);
-        System.out.println(tail.data);
-        System.out.println(head.data);
-        printList(head);
+        System.out.println(ls.tail.data);
+        System.out.println(ls.head.data);
+        ls.printList(ls.head);
     }
 }

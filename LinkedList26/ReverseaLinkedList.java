@@ -3,7 +3,7 @@ package LinkedList26;
 import java.util.Stack;
 
 public class ReverseaLinkedList extends CreateLinkedList{
-    public static void reverseList(){
+    public  void reverseList(){
      Node prev=null;
      Node curr=tail=head;
      Node next;
@@ -17,13 +17,15 @@ public class ReverseaLinkedList extends CreateLinkedList{
     }
 
     public static void main(String[] args) {
+        CreateLinkedList ls=new CreateLinkedList();
+        ReverseaLinkedList rs=new ReverseaLinkedList();
         int arr[] = {1, 2, 3, 4, 5};
         for(int i=arr.length-1;i>=0;i--){
-            addFirst(arr[i]);
+            ls.addFirst(arr[i]);
         }
-        printList(head);
+        ls.printList(ls.head);
         System.out.println();
-        reverseList();
-        printList(head);
+        rs.reverseList();
+        ls.printList(ls.head);
     }
 }

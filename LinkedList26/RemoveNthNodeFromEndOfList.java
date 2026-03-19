@@ -23,13 +23,14 @@ public class RemoveNthNodeFromEndOfList extends CreateLinkedList{
     }
 
     public static void main(String[] args) {
+        CreateLinkedList ls=new CreateLinkedList();
         int arr[] = {1, 2, 3, 4, 5};
         for(int i=arr.length-1;i>=0;i--){
-            addFirst(arr[i]);
+            ls.addFirst(arr[i]);
         }
-        printList(head);
-        deleteNthnode(head,2);
+        ls.printList(ls.head);
+        deleteNthnode(ls.head,2);
         System.out.println();
-        printList(head);
+        ls.printList(ls.head);
     }
 }

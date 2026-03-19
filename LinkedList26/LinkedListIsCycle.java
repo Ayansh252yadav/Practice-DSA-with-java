@@ -17,18 +17,19 @@ public class LinkedListIsCycle extends CreateLinkedList{
     }
 
     public static void main(String[] args) {
+        CreateLinkedList ls=new CreateLinkedList();
         int arr[]={10 ,20, 30, 40};
         for(int i=0;i<arr.length;i++){
-            addLast(arr[i]);
+            ls.addLast(arr[i]);
         }
-        printList(head);
-        Node temp=head;
+        ls.printList(ls.head);
+        Node temp=ls.head;
         while (temp.next!=null){
             temp=temp.next;
         }
         Node tail=temp;
-        tail.next=head;
-        System.out.println(isCycle(head));
+        tail.next=ls.head;
+        System.out.println(isCycle(ls.head));
 
     }
 }

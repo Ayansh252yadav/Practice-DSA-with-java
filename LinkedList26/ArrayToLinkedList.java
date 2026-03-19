@@ -18,12 +18,13 @@ public class ArrayToLinkedList extends CreateLinkedList {
         return temp1.data;
     }
     public static void main(String[] args) {
+        CreateLinkedList ls=new CreateLinkedList();
         int arr[] = {1, 2, 3, 4, 5};
         for(int i=arr.length-1;i>=0;i--){
-            addFirst(arr[i]);
+            ls.addFirst(arr[i]);
         }
-        printList(head);
+        ls.printList(ls.head);
         System.out.println();
-        System.out.println(getMiddle(head));
+        System.out.println(getMiddle(ls.head));
     }
 }
