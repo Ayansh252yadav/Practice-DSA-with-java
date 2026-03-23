@@ -17,7 +17,8 @@ public class PriorityQueue1 {
     }
     public static void main(String[] args) {
         PriorityQueue<Student>pq=new PriorityQueue();
-        pq.add(new Student("Ayansh",1));
+        pq.add(new Student("Ayansh",2));
+
         while(!pq.isEmpty()){
             System.out.println(pq.remove().name);
         }
