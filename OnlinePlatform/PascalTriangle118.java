@@ -29,6 +29,7 @@ public class PascalTriangle118 {
            res.add(new ArrayList<>(temp));
            temp.clear();
        }
+
        return res;
     }
     public static void main(String[] args) {
