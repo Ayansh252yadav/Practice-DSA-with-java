@@ -45,6 +45,7 @@ public class ReorderList143 {
           st++;
            end--;
        }
+
        temp=head;
        int i=0;
        while (temp!=null){
