@@ -1,4 +1,4 @@
-package DP;
+package Dp47part2.DP;
 
 public class FibonacciDp {
     public static int fibonacci(int []dp,int n){

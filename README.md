@@ -31,7 +31,7 @@ The goal of this project is to strengthen my problem-solving skills and build a 
   - Topological Sort, Cycle Detection  
   - Dijkstra’s Algorithm, Kruskal’s, Prim’s  
 
-- **Dynamic Programming (DP)**  
+- **Dynamic Programming (Dp47part2.DP)**  
   - Fibonacci, Knapsack, LIS, LCS, Matrix Chain Multiplication  
 
 - **Greedy Algorithms**  
