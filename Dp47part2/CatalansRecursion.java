@@ -12,6 +12,6 @@ public class CatalansRecursion {
         return ans;
     }
     public static void main(String[] args) {
-        System.out.println(catlans(5));
+        System.out.println(catlans(7));
     }
 }
