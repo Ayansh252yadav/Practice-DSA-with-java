@@ -1,5 +1,7 @@
 package BinaryTree32;
 
+import com.sun.security.jgss.GSSUtil;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -28,6 +30,7 @@ public class TreeTraversal {
         }
         public static void preOrder(Node root){
             if(root==null){
+//                System.out.println("null");
                 return;
             }
             System.out.print(root.data+" ");
