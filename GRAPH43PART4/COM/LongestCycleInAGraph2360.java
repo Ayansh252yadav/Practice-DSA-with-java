@@ -65,7 +65,6 @@ public class LongestCycleInAGraph2360 {
     }
     public static void main(String[] args) {
        int [] edges = {3,3,4,2,3};
-
   longestCycle(edges);
     }
 }
