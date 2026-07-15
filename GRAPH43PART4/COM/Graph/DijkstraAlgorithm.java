@@ -1,8 +1,6 @@
 package GRAPH43PART4.COM.Graph;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class DijkstraAlgorithm {
     static class Edge{
@@ -73,10 +71,12 @@ public class DijkstraAlgorithm {
        }
        System.out.println(Arrays.toString(dist));
    }
+
     public static void main(String[] args) {
         int v=6;
         ArrayList<Edge>[]graph=new ArrayList[v];
         createGraph(graph);
         dijkstra(graph,0);
+
     }
 }
