@@ -22,49 +22,63 @@ public class MinimumCostToreachDest1928 {
             graph[e[1]].add(new Edge(e[1],e[0],e[2]));
         }
     }
-    static class Pair implements Comparable<Pair>{
+    static class Info implements Comparable<Info>{
         int node;
+        int passFee;
         int time;
-        public Pair(int node, int time){
+        public Info(int node, int passFee, int time) {
             this.node = node;
+            this.passFee = passFee;
             this.time = time;
         }
         @Override
-        public int compareTo(Pair o) {
-            return this.time - o.time;
+        public int compareTo(Info o) {
+            return this.passFee - o.passFee;
         }
     }
-    public static int dijkstra(ArrayList<Edge>[]graph,int src,int maxTime,
-                               int []passingFee){
+    public static int minCostUtil(ArrayList<Edge>[]graph,int src,int dest,
+                                   int []passingFee,int maxTime){
        int []dist=new int[passingFee.length];
+       int []newTime=new int[passingFee.length];
        Arrays.fill(dist,Integer.MAX_VALUE);
-       dist[0]=0;
-       PriorityQueue<Pair> q=new PriorityQueue<>();
-       q.add(new Pair(0,0));
-        boolean[]visited=new boolean[passingFee.length];
-        int calcTime=0;
-       while (!q.isEmpty()){
-           Pair curr=q.poll();
-           if(!visited[curr.node]){
-               visited[curr.node]=true;
-               calcTime+=curr.time;
-               for(int i=0;i<graph[curr.node].size();i++){
-                   Edge e=graph[curr.node].get(i);
-                   int u=e.src;
-                   int v=e.dest;
-                   int time=e.time;
-                   if(dist[u]+passingFee[v]<dist[v]){
-                       dist[v]=dist[u]+passingFee[v];
-                       q.add(new Pair(v,calcTime));
+       Arrays.fill(newTime,Integer.MAX_VALUE);
+       newTime[0]=0;
+       dist[src]=0;
+       PriorityQueue<Info> pq=new PriorityQueue<>();
+       pq.offer(new Info(src,passingFee[0],0));
+       while(!pq.isEmpty()){
+           Info curr=pq.poll();
+           if(curr.time>maxTime){
+               break;
+           }
+           for(int i=0;i<graph[curr.node].size();i++){
+               Edge e=graph[curr.node].get(i);
+               int v=e.dest;
+               int time=e.time;
+               int newFee=curr.passFee+passingFee[v];
+               int newtime=curr.time+time;
+               if(newtime>maxTime){
+                   continue;
+               }
+               if(newFee<dist[v] || newtime<newTime[v]){
+                   if(newFee<dist[v]){
+                       dist[v]=newFee;
                    }
+                   if(newtime<newTime[v]){
+                       newTime[v]=newtime;
+                   }
+                   pq.add(new Info(v,newFee, newtime));
                }
            }
        }
-       return dist[maxTime];
+       if(dist[dest]==Integer.MAX_VALUE){
+           return -1;
+       }
+       return dist[dest];
     }
-     public int minCost(int maxTime, int[][] edges, int[] passingFees) {
+    public int minCost(int maxTime, int[][] edges, int[] passingFees) {
         ArrayList<Edge>[]graph=new ArrayList[passingFees.length];
-       createGraph(graph,edges);
- return dijkstra(graph,0,maxTime,passingFees);
+        createGraph(graph,edges);
+      return minCostUtil(graph,0,passingFees.length-1,passingFees,maxTime);
     }
 }
